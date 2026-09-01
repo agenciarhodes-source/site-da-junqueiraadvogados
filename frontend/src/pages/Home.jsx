@@ -8,7 +8,18 @@ import { siteConfig, areas, units, testimonials } from "@/config/site";
 import { ArrowUpRight, MapPin, Phone } from "lucide-react";
 
 const HERO_IMG =
-    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1800&q=80";
+    "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80";
+
+const GALLERY = [
+    "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1573497491765-dccce02b29df?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+];
 
 export default function Home() {
     const { scrollY } = useScroll();
@@ -175,12 +186,36 @@ export default function Home() {
                         "Presença",
                         "Cuidado",
                         "Junqueira Advogados",
-                        "Piauí + Maranhão",
                         "Excelência",
                     ]}
                     slow
                 />
             </section>
+
+            {/* ========================== GALLERY CARROSSEL ========================== */}
+            <section className="bg-[color:var(--paper)] py-20 md:py-24 overflow-hidden">
+                <div className="container-e mb-10 md:mb-14">
+                    <div className="section-label mb-4">— Escritório em imagens</div>
+                    <h2 className="display-lg" style={{ maxWidth: "22ch" }}>
+                        Um <span className="font-editorial italic text-[color:var(--burgundy)]">olhar</span> pelo cotidiano do escritório.
+                    </h2>
+                </div>
+                <div className="marquee marquee-slow">
+                    <div className="marquee-track items-stretch" aria-hidden>
+                        {[...GALLERY, ...GALLERY].map((src, i) => (
+                            <div
+                                key={i}
+                                className="relative flex-none w-[280px] md:w-[420px] aspect-[4/5] spotlight-frame overflow-hidden"
+                            >
+                                <img src={src} alt="" className="h-full w-full object-cover" loading="lazy" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* --- keep only single marquee above; second marquee replaced by gallery --- */}
+            {/* removed duplicate marquee marker */}
 
             {/* ========================== ÁREAS ========================== */}
             <section className="bg-[color:var(--paper)] py-24 md:py-32" id="areas">
@@ -229,7 +264,7 @@ export default function Home() {
                         <div className="md:col-span-7">
                             <div className="section-label mb-4">— Unidades</div>
                             <h2 className="display-xl">
-                                Sete cidades. Uma <span className="font-editorial italic text-[color:var(--burgundy)]">rotina</span> de proximidade.
+                                Sete <span className="font-editorial italic text-[color:var(--burgundy)]">unidades</span>.
                             </h2>
                         </div>
                         <div className="md:col-span-5 md:text-right">
@@ -275,7 +310,7 @@ export default function Home() {
                 <div className="container-e">
                     <div className="section-label mb-4">— Depoimentos</div>
                     <h2 className="display-xl mb-14" style={{ maxWidth: "22ch" }}>
-                        O que <span className="font-editorial italic text-[color:var(--burgundy)]">dizem</span> sobre o cuidado do escritório.
+                        O que <span className="font-editorial italic text-[color:var(--burgundy)]">dizem</span> sobre o escritório.
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         {testimonials.map((t, i) => (
