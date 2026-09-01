@@ -5,7 +5,7 @@ import { FadeUp, LineReveal } from "@/components/motion/Reveal";
 export default function TermosDeUso() {
     return (
         <InstitutionalLayout>
-            <section className="bg-[color:var(--ink)] text-white pt-[130px] pb-16">
+            <section className="bg-[color:var(--burgundy)] text-white pt-[130px] pb-16">
                 <div className="container-e">
                     <div className="section-label section-label-onDark mb-6">— Termos de Uso</div>
                     <h1 className="display-xl text-white">

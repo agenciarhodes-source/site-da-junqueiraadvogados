@@ -30,11 +30,9 @@ export default function Header({ variant = "light" }) {
 
     const onDark = variant === "dark";
     const barBg = scrolled
-        ? "bg-[rgba(29,29,29,0.85)] backdrop-blur-xl border-b border-white/10"
-        : onDark
-            ? "bg-transparent"
-            : "bg-transparent";
-    const linkColor = "text-white/85";
+        ? "bg-[rgba(128,64,64,0.94)] backdrop-blur-xl border-b border-white/10"
+        : "bg-transparent";
+    const linkColor = "text-white/90";
 
     return (
         <>
@@ -50,18 +48,13 @@ export default function Header({ variant = "light" }) {
                         <img
                             src={`${process.env.PUBLIC_URL || ""}/brand/logo-mark.png`}
                             alt="Junqueira Advogados"
-                            className="h-9 w-9 object-contain"
+                            className="h-10 w-10 object-contain rounded-md"
                         />
                         <div className="hidden sm:flex flex-col leading-none">
-                            <span
-                                className="font-editorial text-white text-[17px] italic"
-                                style={{ letterSpacing: "0.01em" }}
-                            >
+                            <span className="text-white text-[18px] font-medium tracking-[-0.01em]">
                                 Junqueira
                             </span>
-                            <span
-                                className="text-[10px] text-white/60 tracking-[0.3em] uppercase font-medium"
-                            >
+                            <span className="text-[9px] text-white/70 tracking-[0.42em] uppercase font-medium mt-1">
                                 Advogados
                             </span>
                         </div>
@@ -112,7 +105,7 @@ export default function Header({ variant = "light" }) {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.35 }}
-                        className="fixed inset-0 z-[70] bg-[color:var(--ink)]"
+                        className="fixed inset-0 z-[70] bg-[color:var(--burgundy-deep)]"
                         data-testid="mobile-menu"
                     >
                         <div className="container-e h-[72px] flex items-center justify-between">

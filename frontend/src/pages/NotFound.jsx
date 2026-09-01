@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function NotFound() {
     return (
-        <div className="min-h-screen bg-[color:var(--ink)] text-white flex items-center relative overflow-hidden">
+        <div className="min-h-screen bg-[color:var(--burgundy)] text-white flex items-center relative overflow-hidden">
             <div className="absolute inset-0 grain opacity-40" />
             <div className="container-e relative">
                 <motion.div

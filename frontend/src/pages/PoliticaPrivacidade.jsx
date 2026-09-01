@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/site";
 export default function PoliticaPrivacidade() {
     return (
         <InstitutionalLayout>
-            <section className="bg-[color:var(--ink)] text-white pt-[130px] pb-16">
+            <section className="bg-[color:var(--burgundy)] text-white pt-[130px] pb-16">
                 <div className="container-e">
                     <div className="section-label section-label-onDark mb-6">— Política de Privacidade</div>
                     <h1 className="display-xl text-white">

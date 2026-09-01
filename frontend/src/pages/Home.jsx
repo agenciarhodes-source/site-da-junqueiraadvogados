@@ -20,7 +20,7 @@ export default function Home() {
     return (
         <InstitutionalLayout>
             {/* ========================== HERO ========================== */}
-            <section className="relative min-h-[100svh] w-full overflow-hidden bg-[color:var(--ink)] text-white">
+            <section className="relative min-h-[100svh] w-full overflow-hidden bg-[color:var(--burgundy)] text-white">
                 {/* Parallax background image */}
                 <motion.div
                     style={{ y: heroImgY, scale: heroImgScale }}
@@ -30,9 +30,9 @@ export default function Home() {
                         <img
                             src={HERO_IMG}
                             alt="Advogados Junqueira"
-                            className="h-full w-full object-cover opacity-55"
+                            className="h-full w-full object-cover opacity-30 mix-blend-luminosity"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--ink)] via-[color:var(--ink)]/60 to-[color:var(--ink)]" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--burgundy)]/70 via-[color:var(--burgundy)]/85 to-[color:var(--burgundy-deep)]" />
                         <div className="absolute inset-0 grain" />
                     </div>
                 </motion.div>
@@ -158,7 +158,7 @@ export default function Home() {
             </section>
 
             {/* ========================== NUMBERED CHAPTERS ========================== */}
-            <section className="bg-[color:var(--ink)] text-white py-24 md:py-32 relative overflow-hidden">
+            <section className="bg-[color:var(--burgundy-deep)] text-white py-24 md:py-32 relative overflow-hidden">
                 <div className="absolute inset-0 grain opacity-40 pointer-events-none" />
                 <div className="container-e relative">
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-end mb-16">

@@ -21,17 +21,17 @@ export default function LandingLayout({ slug, topic, children }) {
 
     return (
         <div className="relative bg-[color:var(--paper)] has-sticky-cta">
-            <header className="fixed inset-x-0 top-0 z-50 bg-[color:var(--ink)]/90 backdrop-blur-xl border-b border-white/10">
+            <header className="fixed inset-x-0 top-0 z-50 bg-[color:var(--burgundy)]/95 backdrop-blur-xl border-b border-white/10">
                 <div className="container-e h-[64px] flex items-center justify-between">
                     <Link to="/" className="flex items-center gap-3" data-testid="landing-logo-link">
                         <img
                             src={`${process.env.PUBLIC_URL || ""}/brand/logo-mark.png`}
                             alt="Junqueira Advogados"
-                            className="h-8 w-8"
+                            className="h-9 w-9 rounded-md"
                         />
                         <div className="hidden sm:flex flex-col leading-none">
-                            <span className="font-editorial italic text-white text-[15px]">Junqueira</span>
-                            <span className="text-[9px] tracking-[0.3em] uppercase text-white/50 mt-0.5">Advogados</span>
+                            <span className="text-white text-[16px] font-medium tracking-[-0.01em]">Junqueira</span>
+                            <span className="text-[9px] tracking-[0.42em] uppercase text-white/70 mt-1 font-medium">Advogados</span>
                         </div>
                     </Link>
                     <div className="hidden md:flex items-center gap-3">
@@ -75,7 +75,7 @@ export default function LandingLayout({ slug, topic, children }) {
             </motion.div>
 
             {/* Slim footer */}
-            <footer className="bg-[color:var(--ink)] text-white/60 text-xs">
+            <footer className="bg-[color:var(--burgundy-deep)] text-white/60 text-xs">
                 <div className="container-e py-8 flex flex-col md:flex-row justify-between gap-3">
                     <div>© {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.</div>
                     <div className="flex gap-6">

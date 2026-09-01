@@ -7,7 +7,7 @@ import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 export default function Contato() {
     return (
         <InstitutionalLayout>
-            <section className="bg-[color:var(--ink)] text-white pt-[130px] pb-16">
+            <section className="bg-[color:var(--burgundy)] text-white pt-[130px] pb-16">
                 <div className="container-e">
                     <div className="section-label section-label-onDark mb-6">— Contato</div>
                     <h1 className="display-hero text-white">

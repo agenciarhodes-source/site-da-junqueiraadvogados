@@ -21,10 +21,10 @@ export default function LandingTemplate({ data }) {
     return (
         <LandingLayout slug={data.slug} topic={data.topic}>
             {/* ================= HERO ================= */}
-            <section className="relative min-h-[85svh] w-full overflow-hidden bg-[color:var(--ink)] text-white">
+            <section className="relative min-h-[85svh] w-full overflow-hidden bg-[color:var(--burgundy)] text-white">
                 <motion.div style={{ y: heroY, scale: heroScale }} className="absolute inset-0">
-                    <img src={data.heroImage} alt="" className="h-full w-full object-cover opacity-40" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--ink)]/60 via-[color:var(--ink)]/70 to-[color:var(--ink)]" />
+                    <img src={data.heroImage} alt="" className="h-full w-full object-cover opacity-25 mix-blend-luminosity" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--burgundy)]/70 via-[color:var(--burgundy)]/85 to-[color:var(--burgundy-deep)]" />
                     <div className="absolute inset-0 grain opacity-40" />
                 </motion.div>
 
@@ -194,7 +194,7 @@ export default function LandingTemplate({ data }) {
             </section>
 
             {/* ================= FINAL CTA ================= */}
-            <section className="relative bg-[color:var(--ink)] text-white overflow-hidden">
+            <section className="relative bg-[color:var(--burgundy-deep)] text-white overflow-hidden">
                 <div className="absolute inset-0 grain opacity-40" />
                 <div className="container-e relative py-24 md:py-32 text-center">
                     <div className="section-label section-label-onDark mb-6 inline-block">— {data.topic}</div>

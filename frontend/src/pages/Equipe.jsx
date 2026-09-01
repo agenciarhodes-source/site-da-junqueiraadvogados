@@ -6,7 +6,7 @@ import { team } from "@/config/site";
 export default function Equipe() {
     return (
         <InstitutionalLayout>
-            <section className="bg-[color:var(--ink)] text-white pt-[130px] pb-16">
+            <section className="bg-[color:var(--burgundy)] text-white pt-[130px] pb-16">
                 <div className="container-e">
                     <div className="section-label section-label-onDark mb-6">— Equipe</div>
                     <h1 className="display-hero text-white">

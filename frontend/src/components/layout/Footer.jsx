@@ -5,7 +5,7 @@ import { siteConfig, units, areas } from "@/config/site";
 export default function Footer() {
     return (
         <footer
-            className="relative bg-[color:var(--ink)] text-white/85"
+            className="relative bg-[color:var(--burgundy-deep)] text-white/85"
             data-testid="site-footer"
         >
             <div className="container-e pt-24 pb-14 grid grid-cols-1 md:grid-cols-12 gap-12">
@@ -14,13 +14,13 @@ export default function Footer() {
                         <img
                             src={`${process.env.PUBLIC_URL || ""}/brand/logo-mark.png`}
                             alt="Junqueira Advogados"
-                            className="h-12 w-12"
+                            className="h-14 w-14 rounded-lg"
                         />
                         <div>
-                            <div className="font-editorial italic text-white text-2xl leading-none">
+                            <div className="text-white text-2xl font-medium tracking-[-0.01em] leading-none">
                                 Junqueira
                             </div>
-                            <div className="text-[10px] tracking-[0.3em] uppercase text-white/50 mt-1">
+                            <div className="text-[10px] tracking-[0.42em] uppercase text-white/60 mt-2 font-medium">
                                 Advogados
                             </div>
                         </div>

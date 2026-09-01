@@ -12,10 +12,10 @@ export default function Escritorio() {
     return (
         <InstitutionalLayout>
             {/* Hero */}
-            <section className="relative bg-[color:var(--ink)] text-white pt-[130px] pb-24 md:pb-32 overflow-hidden">
+            <section className="relative bg-[color:var(--burgundy)] text-white pt-[130px] pb-24 md:pb-32 overflow-hidden">
                 <div className="absolute inset-0">
-                    <img src={BG} alt="" className="h-full w-full object-cover opacity-25" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--ink)]/70 via-[color:var(--ink)]/85 to-[color:var(--ink)]" />
+                    <img src={BG} alt="" className="h-full w-full object-cover opacity-20 mix-blend-luminosity" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--burgundy)]/70 via-[color:var(--burgundy)]/85 to-[color:var(--burgundy-deep)]" />
                     <div className="absolute inset-0 grain opacity-40" />
                 </div>
                 <div className="container-e relative">
@@ -66,7 +66,7 @@ export default function Escritorio() {
             </section>
 
             {/* Missão / Visão / Valores */}
-            <section className="bg-[color:var(--ink)] text-white py-24 md:py-28 relative overflow-hidden">
+            <section className="bg-[color:var(--burgundy-deep)] text-white py-24 md:py-28 relative overflow-hidden">
                 <div className="absolute inset-0 grain opacity-30" />
                 <div className="container-e relative">
                     <div className="section-label section-label-onDark mb-4">— Missão, Visão, Valores</div>

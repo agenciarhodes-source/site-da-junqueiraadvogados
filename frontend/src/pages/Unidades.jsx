@@ -7,7 +7,7 @@ import { MapPin, Phone, MessageCircle } from "lucide-react";
 export default function Unidades() {
     return (
         <InstitutionalLayout>
-            <section className="bg-[color:var(--ink)] text-white pt-[130px] pb-16">
+            <section className="bg-[color:var(--burgundy)] text-white pt-[130px] pb-16">
                 <div className="container-e">
                     <div className="section-label section-label-onDark mb-6">— Unidades</div>
                     <h1 className="display-hero text-white">
