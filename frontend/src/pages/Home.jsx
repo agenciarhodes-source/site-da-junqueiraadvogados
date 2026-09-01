@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import InstitutionalLayout from "@/components/layout/InstitutionalLayout";
 import { LineReveal, Reveal, FadeUp, ImageReveal } from "@/components/motion/Reveal";
 import Marquee from "@/components/Marquee";
+import GalleryCarousel from "@/components/GalleryCarousel";
 import { siteConfig, areas, units, testimonials } from "@/config/site";
 import { ArrowUpRight, MapPin, Phone } from "lucide-react";
 
@@ -200,18 +201,7 @@ export default function Home() {
                         Um <span className="font-editorial italic text-[color:var(--burgundy)]">olhar</span> pelo cotidiano do escritório.
                     </h2>
                 </div>
-                <div className="marquee marquee-slow">
-                    <div className="marquee-track items-stretch" aria-hidden>
-                        {[...GALLERY, ...GALLERY].map((src, i) => (
-                            <div
-                                key={i}
-                                className="relative flex-none w-[280px] md:w-[420px] aspect-[4/5] spotlight-frame overflow-hidden"
-                            >
-                                <img src={src} alt="" className="h-full w-full object-cover" loading="lazy" />
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                <GalleryCarousel images={GALLERY} duration={45} />
             </section>
 
             {/* --- keep only single marquee above; second marquee replaced by gallery --- */}
