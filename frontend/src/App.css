@@ -1,0 +1,5 @@
+/* Junqueira Advogados — page-level helpers */
+.App {
+    min-height: 100vh;
+    background: var(--paper);
+}
