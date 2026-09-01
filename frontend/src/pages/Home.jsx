@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import InstitutionalLayout from "@/components/layout/InstitutionalLayout";
 import { LineReveal, Reveal, FadeUp, ImageReveal } from "@/components/motion/Reveal";
-import Chapter from "@/components/Chapter";
 import Marquee from "@/components/Marquee";
 import { siteConfig, areas, team, units, testimonials } from "@/config/site";
 import { ArrowUpRight, MapPin, Phone } from "lucide-react";
@@ -30,10 +29,10 @@ export default function Home() {
                         <img
                             src={HERO_IMG}
                             alt="Advogados Junqueira"
-                            className="h-full w-full object-cover opacity-30 mix-blend-luminosity"
+                            className="h-full w-full object-cover opacity-[0.12] mix-blend-luminosity"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--burgundy)]/70 via-[color:var(--burgundy)]/85 to-[color:var(--burgundy-deep)]" />
-                        <div className="absolute inset-0 grain" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--burgundy)]/95 via-[color:var(--burgundy)]/92 to-[color:var(--burgundy-deep)]" />
+                        <div className="absolute inset-0 grain opacity-70" />
                     </div>
                 </motion.div>
 
@@ -84,7 +83,7 @@ export default function Home() {
                                 {siteConfig.hero.subtitle}
                             </p>
                             <div className="mt-8 flex flex-wrap items-center gap-4">
-                                <Link to="/contato" className="btn-primary" data-testid="hero-cta-primary">
+                                <Link to="/contato" className="btn-gold" data-testid="hero-cta-primary">
                                     Fale com um advogado
                                     <span className="btn-arrow">→</span>
                                 </Link>
@@ -138,64 +137,30 @@ export default function Home() {
                 </motion.div>
             </section>
 
-            {/* ========================== INTRO STRIP ========================== */}
-            <section className="bg-[color:var(--paper)] py-20 md:py-28">
-                <div className="container-e grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
-                    <div className="md:col-span-2">
-                        <div className="section-label">— Manifesto</div>
-                    </div>
-                    <div className="md:col-span-10">
+            {/* ========================== NOSSA HISTÓRIA ========================== */}
+            <section className="bg-[color:var(--paper)] py-24 md:py-32">
+                <div className="container-e grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
+                    <div className="md:col-span-6">
+                        <div className="section-label">— Nossa história</div>
                         <Reveal>
-                            <p className="display-lg" style={{ maxWidth: "22ch" }}>
-                                Uma advocacia construída no interior, ampliada com
-                                <span className="font-editorial italic text-[color:var(--burgundy)]"> método </span>
-                                e conduzida com
-                                <span className="font-editorial italic text-[color:var(--burgundy)]"> cuidado</span>.
-                            </p>
+                            <h2 className="display-lg mt-5" style={{ maxWidth: "20ch" }}>
+                                Compromisso com resultados e uma trajetória de <span className="font-editorial italic text-[color:var(--burgundy)]">confiança</span>.
+                            </h2>
                         </Reveal>
                     </div>
-                </div>
-            </section>
-
-            {/* ========================== NUMBERED CHAPTERS ========================== */}
-            <section className="bg-[color:var(--burgundy-deep)] text-white py-24 md:py-32 relative overflow-hidden">
-                <div className="absolute inset-0 grain opacity-40 pointer-events-none" />
-                <div className="container-e relative">
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-end mb-16">
-                        <div className="md:col-span-6">
-                            <div className="section-label section-label-onDark mb-4">— O escritório</div>
-                            <h2 className="display-xl text-white">
-                                Presença que <span className="font-editorial italic text-[color:var(--gold)]">acompanha</span>.
-                                <br />Método que <span className="font-editorial italic text-[color:var(--gold)]">explica</span>.
-                            </h2>
-                        </div>
-                        <div className="md:col-span-6 flex md:justify-end">
-                            <Link to="/escritorio" className="btn-ghost btn-onDark" data-testid="chapters-cta">
-                                Conheça o escritório <ArrowUpRight size={16} />
-                            </Link>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col gap-16 md:gap-20">
+                    <div className="md:col-span-6 md:pt-4">
                         <FadeUp>
-                            <Chapter num="01" title="Origem em Luzilândia" onDark>
-                                Da praça pequena para as principais cidades do Piauí e Maranhão. A trajetória sustenta a forma como o escritório escuta, analisa e responde.
-                            </Chapter>
-                        </FadeUp>
-                        <FadeUp delay={0.05}>
-                            <Chapter num="02" title="Método antes do pedido" onDark>
-                                Toda demanda começa por uma leitura técnica: histórico, documentos e regras aplicáveis. Antes de qualquer conclusão, uma análise responsável.
-                            </Chapter>
-                        </FadeUp>
-                        <FadeUp delay={0.1}>
-                            <Chapter num="03" title="Presença regional" onDark>
-                                Sete unidades entre Piauí e Maranhão. Atendimento presencial onde a proximidade importa e digital onde a agilidade importa.
-                            </Chapter>
-                        </FadeUp>
-                        <FadeUp delay={0.15}>
-                            <Chapter num="04" title="Comunicação transparente" onDark>
-                                Sem promessas, sem sensacionalismo. Comunicação clara em todas as etapas — porque confiança se constrói com verdade.
-                            </Chapter>
+                            <p className="body-lg">
+                                Com anos de atuação e uma equipe multidisciplinar altamente qualificada, o escritório Junqueira Advogados é referência em atendimento estratégico e humanizado.
+                            </p>
+                            <p className="body-lg mt-5">
+                                Nossa estrutura sólida nos permite atender clientes em todo o Brasil com agilidade, ética e excelência técnica.
+                            </p>
+                            <div className="mt-8">
+                                <Link to="/escritorio" className="btn-gold" data-testid="historia-cta">
+                                    Saiba mais sobre nossa história <span className="btn-arrow">→</span>
+                                </Link>
+                            </div>
                         </FadeUp>
                     </div>
                 </div>

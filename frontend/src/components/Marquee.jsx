@@ -14,8 +14,8 @@ export default function Marquee({ words = [], onDark = false, slow = true }) {
                     <span
                         className={`font-editorial italic ${onDark ? "text-white/90" : "text-[color:var(--ink)]"}`}
                         style={{
-                            fontSize: "clamp(3rem, 10vw, 7.5rem)",
-                            letterSpacing: "-0.02em",
+                            fontSize: "clamp(1.4rem, 3.2vw, 2.4rem)",
+                            letterSpacing: "-0.01em",
                             lineHeight: 1,
                         }}
                     >
