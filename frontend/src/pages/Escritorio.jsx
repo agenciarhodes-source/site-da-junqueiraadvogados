@@ -73,19 +73,17 @@ export default function Escritorio() {
                     <h2 className="display-xl text-white mb-16">
                         Uma <span className="font-editorial italic text-[color:var(--gold)]">conduta</span> escrita em cada relação.
                     </h2>
-                    <div className="grid grid-cols-1 md:gap-16">
+                    <div className="flex flex-col gap-8 md:gap-10">
                         <FadeUp>
                             <Chapter num="01" title="Missão" onDark>
                                 Oferecer atendimento jurídico à altura das histórias de nossos clientes, com método, escuta e responsabilidade profissional.
                             </Chapter>
                         </FadeUp>
-                        <div className="h-16" />
                         <FadeUp delay={0.05}>
                             <Chapter num="02" title="Visão" onDark>
                                 Ser referência no Piauí e Maranhão pela qualidade da comunicação com o cliente, pela análise técnica e pela postura profissional.
                             </Chapter>
                         </FadeUp>
-                        <div className="h-16" />
                         <FadeUp delay={0.1}>
                             <Chapter num="03" title="Valores" onDark>
                                 Transparência, cuidado, presença regional e clareza da linguagem. Uma comunicação sem promessas e um trabalho conduzido com respeito ao cliente e à profissão.

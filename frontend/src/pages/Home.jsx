@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import InstitutionalLayout from "@/components/layout/InstitutionalLayout";
 import { LineReveal, Reveal, FadeUp, ImageReveal } from "@/components/motion/Reveal";
 import Marquee from "@/components/Marquee";
-import { siteConfig, areas, team, units, testimonials } from "@/config/site";
+import { siteConfig, areas, units, testimonials } from "@/config/site";
 import { ArrowUpRight, MapPin, Phone } from "lucide-react";
 
 const HERO_IMG =
@@ -29,9 +29,10 @@ export default function Home() {
                         <img
                             src={HERO_IMG}
                             alt="Advogados Junqueira"
-                            className="h-full w-full object-cover opacity-[0.12] mix-blend-luminosity"
+                            className="h-full w-full object-cover opacity-[0.08]"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--burgundy)]/95 via-[color:var(--burgundy)]/92 to-[color:var(--burgundy-deep)]" />
+                        <div className="absolute inset-0 bg-[color:var(--burgundy)]" style={{ opacity: 0.94 }} />
+                        <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--burgundy)]/60 via-transparent to-[color:var(--burgundy-deep)]/80" />
                         <div className="absolute inset-0 grain opacity-70" />
                     </div>
                 </motion.div>
@@ -48,7 +49,7 @@ export default function Home() {
                     >
                         <span className="h-px w-8 bg-[color:var(--gold)]" />
                         <span className="text-[11px] tracking-[0.28em] uppercase text-[color:var(--gold)] font-medium">
-                            {siteConfig.hero.eyebrow} · Piauí + Maranhão
+                            {siteConfig.hero.eyebrow}
                         </span>
                     </motion.div>
 
@@ -185,17 +186,11 @@ export default function Home() {
             <section className="bg-[color:var(--paper)] py-24 md:py-32" id="areas">
                 <div className="container-e">
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end mb-14">
-                        <div className="md:col-span-7">
+                        <div className="md:col-span-12">
                             <div className="section-label mb-4">— Áreas de atuação</div>
                             <h2 className="display-xl">
-                                Análise técnica para cada
-                                <span className="font-editorial italic text-[color:var(--burgundy)]"> história</span>.
+                                Áreas de <span className="font-editorial italic text-[color:var(--burgundy)]">atuação</span>.
                             </h2>
-                        </div>
-                        <div className="md:col-span-5 md:text-right">
-                            <p className="body-md" style={{ maxWidth: "40ch", marginLeft: "auto" }}>
-                                Cada tema abaixo possui uma página dedicada com explicação clara e caminhos para conversa direta com um advogado.
-                            </p>
                         </div>
                     </div>
 
@@ -221,51 +216,6 @@ export default function Home() {
                                     </div>
                                     <p className="body-sm mt-6">{a.short}</p>
                                 </Link>
-                            </FadeUp>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ========================== EQUIPE ========================== */}
-            <section className="relative bg-[color:var(--paper-2)] py-24 md:py-32">
-                <div className="container-e">
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-14 items-end">
-                        <div className="md:col-span-7">
-                            <div className="section-label mb-4">— Sócios</div>
-                            <h2 className="display-xl">
-                                Advogados que <span className="font-editorial italic text-[color:var(--burgundy)]">assinam</span> cada análise.
-                            </h2>
-                        </div>
-                        <div className="md:col-span-5 md:text-right">
-                            <Link to="/equipe" className="btn-ghost" data-testid="team-cta">
-                                Toda a equipe <ArrowUpRight size={16} />
-                            </Link>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                        {team.map((p, i) => (
-                            <FadeUp key={p.name} delay={i * 0.08}>
-                                <div className="group">
-                                    <ImageReveal className="aspect-[4/5] spotlight-frame">
-                                        <img
-                                            src={p.image}
-                                            alt={p.name}
-                                            className="h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
-                                        />
-                                    </ImageReveal>
-                                    <div className="mt-5 flex items-start justify-between gap-3">
-                                        <div>
-                                            <div className="display-md">{p.name}</div>
-                                            <div className="text-[11px] tracking-[0.24em] uppercase text-[color:var(--burgundy)] mt-1">
-                                                {p.role}
-                                            </div>
-                                        </div>
-                                        <ArrowUpRight size={20} className="text-[color:var(--ink)]/40 mt-1" />
-                                    </div>
-                                    <div className="mt-3 text-[13px] text-[color:var(--ink)]/60">{p.oab}</div>
-                                </div>
                             </FadeUp>
                         ))}
                     </div>
