@@ -157,6 +157,35 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* ========================== ESCRITÓRIO (FOTOS) ========================== */}
+            <section className="bg-[color:var(--paper-2)] py-24 md:py-32">
+                <div className="container-e">
+                    <Reveal>
+                        <h2 className="display-xl mb-14" style={{ maxWidth: "22ch" }}>
+                            Um olhar pelo <span className="font-editorial italic text-[color:var(--burgundy)]">cotidiano</span> do escritório.
+                        </h2>
+                    </Reveal>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {[
+                            "/brand/gallery/escritorio-1.jpg",
+                            "/brand/gallery/escritorio-2.jpg",
+                            "/brand/gallery/escritorio-3.jpg",
+                            "/brand/gallery/escritorio-4.jpg",
+                        ].map((src, i) => (
+                            <FadeUp key={i} delay={i * 0.08}>
+                                <ImageReveal className="aspect-[4/3] spotlight-frame rounded-sm overflow-hidden">
+                                    <img
+                                        src={src}
+                                        alt={`Escritório Junqueira Advogados - foto ${i + 1}`}
+                                        className="h-full w-full object-cover"
+                                    />
+                                </ImageReveal>
+                            </FadeUp>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* ========================== EDITORIAL MARQUEE ========================== */}
             <section className="bg-[color:var(--paper)] hairline-b py-4">
                 <Marquee
