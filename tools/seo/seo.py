@@ -86,4 +86,6 @@ TEXT_SWAPS = [
     ('children:"unidades PI + MA"', 'children:"unidades presenciais"'),
     ("cuidado, presen\\xe7a regional e clareza", "cuidado, proximidade e clareza"),
     ('siteUrl:"https://junqueiraadvogados.com.br"', 'siteUrl:"https://junqueiraadvogados.com"'),
+    ("href:`tel:+${e.phone.replace(", "href:`tel:+55${e.phone.replace("),
+    ("href:`tel:+${id.generalPhone.replace(", "href:`tel:+55${id.generalPhone.replace("),
 ]
