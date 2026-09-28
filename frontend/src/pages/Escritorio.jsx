@@ -39,8 +39,8 @@ export default function Escritorio() {
                     <div className="md:col-span-5">
                         <ImageReveal className="aspect-[4/5] spotlight-frame">
                             <img
-                                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80"
-                                alt="Equipe do escritório"
+                                src="/brand/escritorio-recepcao.jpg"
+                                alt="Recepção Junqueira Advogados"
                                 className="h-full w-full object-cover"
                             />
                         </ImageReveal>
