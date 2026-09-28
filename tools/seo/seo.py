@@ -1,0 +1,89 @@
+# -*- coding: utf-8 -*-
+# SEO configuration for Junqueira Advogados (production build) - linguagem nacional
+SITE = "https://junqueiraadvogados.com"
+BRAND = "Junqueira Advogados"
+OG_IMAGE = SITE + "/brand/og-junqueira.jpg"
+ATEND = "Atendimento online em todo o Brasil e unidades presenciais no Nordeste."
+
+# path -> (title, description, breadcrumb label)
+PAGES = {
+    "/": ("Junqueira Advogados | Escritório de Advocacia Previdenciária e do Consumidor",
+          "Escritório de advocacia especializado em Direito Previdenciário e do Consumidor: aposentadoria, BPC/LOAS, pensão por morte e mais. " + ATEND,
+          "Início"),
+    "/escritorio": ("O Escritório | Junqueira Advogados – Advocacia Previdenciária e do Consumidor",
+          "Conheça o Junqueira Advogados: escritório de advocacia nascido em Luzilândia (PI) que hoje atende clientes em todo o Brasil. Missão, visão, valores e sócios.",
+          "O Escritório"),
+    "/areas-de-atuacao": ("Áreas de Atuação: Direito Previdenciário e do Consumidor | Junqueira",
+          "Aposentadoria, pensão por morte, BPC/LOAS, CNIS, auxílio-acidente, salário-maternidade, empréstimo não reconhecido e direito aéreo. Atendimento em todo o Brasil.",
+          "Áreas de Atuação"),
+    "/equipe": ("Advogados Sócios | Junqueira Advogados – Escritório de Advocacia",
+          "Conheça os advogados sócios do Junqueira Advogados, escritório de advocacia com atuação em Direito Previdenciário e do Consumidor em todo o Brasil.",
+          "Equipe"),
+    "/unidades": ("Unidades e Atendimento em Todo o Brasil | Junqueira Advogados",
+          "Atendimento online para todo o Brasil e 7 unidades presenciais: Teresina, Parnaíba, Luzilândia, Esperantina, Barras, São Bernardo e Araioses.",
+          "Unidades"),
+    "/contato": ("Contato e WhatsApp | Junqueira Advogados – Atendimento em Todo o Brasil",
+          "Fale com o Junqueira Advogados pelo WhatsApp, telefone (86) 4009-6145 ou formulário. Atendimento online em todo o Brasil, de segunda a sexta, das 8h às 18h.",
+          "Contato"),
+    "/politica-de-privacidade": ("Política de Privacidade | Junqueira Advogados",
+          "Como o Junqueira Advogados coleta, usa e protege os dados pessoais de quem acessa o site, em conformidade com a LGPD.",
+          "Política de Privacidade"),
+    "/termos-de-uso": ("Termos de Uso | Junqueira Advogados",
+          "Termos e condições de uso do site do Junqueira Advogados.",
+          "Termos de Uso"),
+    # áreas
+    "/aposentadoria": ("Aposentadoria INSS: Escritório de Advocacia Previdenciária | Junqueira",
+          "Pedido, revisão ou negativa de aposentadoria no INSS? Escritório especializado em Direito Previdenciário: análise do CNIS e das regras de transição. " + ATEND,
+          "Aposentadoria"),
+    "/pensao-por-morte": ("Pensão por Morte INSS: Escritório de Advocacia Previdenciária | Junqueira",
+          "Pensão por morte negada ou em análise? Entenda quem é dependente, qualidade de segurado e documentos, com escritório especializado. Atendimento em todo o Brasil.",
+          "Pensão por Morte"),
+    "/cnis": ("Correção do CNIS: Escritório de Advocacia Previdenciária | Junqueira",
+          "Vínculos faltando, contribuições erradas ou em duplicidade no CNIS podem prejudicar sua aposentadoria. Conferência e correção com escritório especializado.",
+          "CNIS"),
+    "/planejamento-previdenciario": ("Planejamento Previdenciário | Escritório de Advocacia Junqueira",
+          "Descubra a melhor regra e o melhor momento para se aposentar. Estudo do histórico contributivo antes do pedido no INSS. Atendimento online em todo o Brasil.",
+          "Planejamento Previdenciário"),
+    "/auxilio-acidente": ("Auxílio-Acidente INSS: Escritório de Advocacia Previdenciária | Junqueira",
+          "Ficou com sequela após um acidente? Veja quando cabe o auxílio-acidente do INSS e quais documentos reunir, com escritório especializado. Atendimento em todo o Brasil.",
+          "Auxílio-Acidente"),
+    "/emprestimo-nao-reconhecido": ("Empréstimo Consignado Não Reconhecido: Advocacia do Consumidor | Junqueira",
+          "Desconto de empréstimo consignado que você não contratou no benefício do INSS? Escritório especializado em Direito do Consumidor. Atendimento em todo o Brasil.",
+          "Empréstimo Não Reconhecido"),
+    "/direito-aereo": ("Voo Cancelado e Bagagem Extraviada: Advocacia do Consumidor | Junqueira",
+          "Voo cancelado, atraso, conexão perdida ou bagagem extraviada? Entenda seus direitos de passageiro com escritório especializado. Atendimento em todo o Brasil.",
+          "Direito Aéreo"),
+    "/bpc-loas": ("BPC/LOAS: Escritório de Advocacia Previdenciária | Junqueira Advogados",
+          "BPC/LOAS negado ou em análise? Entenda os critérios de renda, CadÚnico e documentos do benefício assistencial, com escritório especializado. " + ATEND,
+          "BPC / LOAS"),
+    "/bpc-idoso": ("BPC Idoso (LOAS): Escritório de Advocacia Previdenciária | Junqueira",
+          "BPC/LOAS para pessoa idosa a partir de 65 anos: critérios, CadÚnico e documentos. Análise do pedido no INSS com escritório especializado, em todo o Brasil.",
+          "BPC Idoso"),
+    "/bpc-autismo": ("BPC/LOAS para Autismo (TEA): Escritório de Advocacia | Junqueira",
+          "BPC/LOAS para pessoa com autismo (TEA): laudos, avaliação e critérios do INSS. Orientação com escritório especializado em Direito Previdenciário, em todo o Brasil.",
+          "BPC e Autismo"),
+    "/salario-maternidade": ("Salário-Maternidade: Escritório de Advocacia Previdenciária | Junqueira",
+          "Salário-maternidade negado? Entenda quem tem direito, inclusive seguradas rurais e autônomas, e quais documentos o INSS pede. Atendimento em todo o Brasil.",
+          "Salário-Maternidade"),
+}
+
+AREA_SLUGS = ["pensao-por-morte", "aposentadoria", "cnis", "planejamento-previdenciario",
+              "auxilio-acidente", "emprestimo-nao-reconhecido", "direito-aereo", "bpc-loas",
+              "bpc-idoso", "bpc-autismo", "salario-maternidade"]
+
+# Textos visiveis do site: trocar referencias regionais por linguagem nacional
+TEXT_SWAPS = [
+    ("ampliada para as principais pra\\xe7as do Piau\\xed e Maranh\\xe3o, com foco",
+     "ampliada para atender clientes de todo o Brasil, com foco"),
+    ("Escrit\\xf3rio de advocacia com origem em Luzil\\xe2ndia (PI), presen\\xe7a consolidada no Piau\\xed e Maranh\\xe3o. Atendimento presencial e digital",
+     "Escrit\\xf3rio de advocacia com origem em Luzil\\xe2ndia (PI) e atua\\xe7\\xe3o em todo o Brasil. Atendimento presencial e digital"),
+    ('" para as principais pra\\xe7as do Piau\\xed e Maranh\\xe3o."',
+     '" para clientes de todo o Brasil."'),
+    ("Ser refer\\xeancia no Piau\\xed e Maranh\\xe3o pela qualidade",
+     "Ser refer\\xeancia nacional pela qualidade"),
+    ('"An\\xe1lise t\\xe9cnica de cada caso","Piau\\xed e Maranh\\xe3o"]',
+     '"An\\xe1lise t\\xe9cnica de cada caso","Todo o Brasil"]'),
+    ('children:"unidades PI + MA"', 'children:"unidades presenciais"'),
+    ("cuidado, presen\\xe7a regional e clareza", "cuidado, proximidade e clareza"),
+    ('siteUrl:"https://junqueiraadvogados.com.br"', 'siteUrl:"https://junqueiraadvogados.com"'),
+]

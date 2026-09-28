@@ -1,0 +1,75 @@
+Options -MultiViews -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml application/xml
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 1 hour"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # --- 1. Forcar HTTPS ---
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # --- 2. Dominio oficial ---
+  # ATIVAR SO QUANDO junqueiraadvogados.com ESTIVER APONTANDO PARA ESTA HOSPEDAGEM.
+  # Redireciona www, junqueiraadvogados.com.br e o dominio de teste para o dominio oficial.
+  # (remova o "#" das 2 linhas abaixo)
+  # RewriteCond %{HTTP_HOST} !^junqueiraadvogados\.com$ [NC]
+  # RewriteRule ^ https://junqueiraadvogados.com%{REQUEST_URI} [R=301,L]
+
+  # --- 3. Enderecos antigos em PHP (junqueiraadvogados.com.br) ---
+  RewriteRule ^contato\.php$ /contato [R=301,L,NC]
+  RewriteRule ^escritorio\.php$ /escritorio [R=301,L,NC]
+  RewriteRule ^(equipe|socios)\.php$ /equipe [R=301,L,NC]
+  RewriteRule ^(unidades|enderecos)\.php$ /unidades [R=301,L,NC]
+  RewriteRule ^(areas|atuacao|servicos)\.php$ /areas-de-atuacao [R=301,L,NC]
+  RewriteRule ^index\.php$ / [R=301,L,NC]
+
+  # --- 4. Enderecos do site antigo em WordPress (junqueiraadvogados.com) ---
+  RewriteRule ^sobre-nos/?$ /escritorio [R=301,L,NC]
+  RewriteRule ^socios-fundadores/?$ /equipe [R=301,L,NC]
+  RewriteRule ^(fale-conosco|trabalhe-conosco)/?$ /contato [R=301,L,NC]
+  RewriteRule ^servicos/?$ /areas-de-atuacao [R=301,L,NC]
+  RewriteRule ^areas-de-atuacao/.+$ /areas-de-atuacao [R=301,L,NC]
+  RewriteRule ^artigos/.*maternidade.*$ /salario-maternidade [R=301,L,NC]
+  RewriteRule ^artigos/.*(bpc|loas).*$ /bpc-loas [R=301,L,NC]
+  RewriteRule ^artigos/.*aposentadoria.*$ /aposentadoria [R=301,L,NC]
+  RewriteRule ^artigos/.*pensao.*$ /pensao-por-morte [R=301,L,NC]
+  RewriteRule ^artigos/.*(emprestimo|consignado).*$ /emprestimo-nao-reconhecido [R=301,L,NC]
+  RewriteRule ^artigos/.*(voo|aere|bagagem).*$ /direito-aereo [R=301,L,NC]
+  RewriteRule ^artigos/.*cnis.*$ /cnis [R=301,L,NC]
+  RewriteRule ^artigos(/.*)?$ /areas-de-atuacao [R=301,L,NC]
+  RewriteRule ^(wp-admin|wp-login\.php|feed|category|tag|author)(/.*)?$ / [R=301,L,NC]
+
+  # --- 5. URLs limpas: /index.html e /pagina.html -> sem extensao ---
+  RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+  RewriteRule ^ / [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/+([^?\s]+?)\.html[\s?] [NC]
+  RewriteCond %1 !^404$
+  RewriteRule ^ /%1 [R=301,L]
+
+  # --- 6. Remover barra final (/contato/ -> /contato) ---
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # --- 7. Servir a pagina pre-renderizada (/aposentadoria -> aposentadoria.html) ---
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+
+  # Qualquer outro endereco inexistente retorna 404 de verdade (404.html).
+</IfModule>

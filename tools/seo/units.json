@@ -1,0 +1,84 @@
+{
+ "units": [
+  {
+   "city": "Teresina",
+   "state": "Piauí",
+   "address": "Av. Jóquei Clube, 299 · Edif. EuroBusiness · Cobertura · Sala 4 — Jóquei",
+   "phone": "(86) 4009-6145",
+   "whatsapp": "(86) 9 9926-6593",
+   "whatsappLink": "https://wa.me/558699926593?text=Olá%2C%20gostaria%20de%20falar%20com%20a%20unidade%20de%20Teresina.",
+   "mapEmbed": "https://www.google.com/maps?q=Av.+Joquei+Clube+299+Teresina+PI&output=embed",
+   "head": true
+  },
+  {
+   "city": "Parnaíba",
+   "state": "Piauí",
+   "address": "Rua Tabajara, 535 — Bairro São Francisco",
+   "whatsapp": "(86) 9 9920-1896",
+   "whatsappLink": "https://wa.me/558699920896",
+   "mapEmbed": "https://www.google.com/maps?q=R.+Tabajara+535+Parnaiba+PI&output=embed"
+  },
+  {
+   "city": "Luzilândia",
+   "state": "Piauí",
+   "address": "R. Cel. Hugo de Castro, 412",
+   "whatsapp": "(86) 9 9907-9295",
+   "whatsappLink": "https://wa.me/558699079295",
+   "mapEmbed": "https://www.google.com/maps?q=R.+Cel.+Hugo+de+Castro+412+Luzilandia+PI&output=embed"
+  },
+  {
+   "city": "Esperantina",
+   "state": "Piauí",
+   "address": "R. Ver. Ramos, 727 — Centro",
+   "whatsapp": "(86) 9 8864-1132",
+   "whatsappLink": "https://wa.me/558688641132",
+   "mapEmbed": "https://www.google.com/maps?q=R.+Ver.+Ramos+727+Esperantina+PI&output=embed"
+  },
+  {
+   "city": "Barras",
+   "state": "Piauí",
+   "address": "R. Mal. Pires Ferreira, 484 — Centro",
+   "whatsapp": "(86) 9 8177-0086",
+   "whatsappLink": "https://wa.me/558681770086",
+   "mapEmbed": "https://www.google.com/maps?q=R.+Mal.+Pires+Ferreira+484+Barras+PI&output=embed"
+  },
+  {
+   "city": "São Bernardo",
+   "state": "Maranhão",
+   "address": "R. Barão do Rio Branco, 732",
+   "whatsapp": "(98) 9 8443-1955",
+   "whatsappLink": "https://wa.me/559884431955",
+   "mapEmbed": "https://www.google.com/maps?q=R.+Barao+do+Rio+Branco+732+Sao+Bernardo+MA&output=embed"
+  },
+  {
+   "city": "Araioses",
+   "state": "Maranhão",
+   "address": "R. Vinte e Oito de Julho, s/n — Centro",
+   "phone": "(98) 7006-0896",
+   "mapEmbed": "https://www.google.com/maps?q=R.+Vinte+e+Oito+de+Julho+Araioses+MA&output=embed"
+  }
+ ],
+ "team": [
+  {
+   "name": "Filipe Junqueira",
+   "role": "Sócio-fundador",
+   "oab": "OAB PI 15510 · OAB MA 28024-A",
+   "bio": "Trajetória construída no interior e ampliada para as principais praças do Piauí e Maranhão, com foco em cuidado jurídico responsável.",
+   "image": "/brand/team/filipe.jpg"
+  },
+  {
+   "name": "Adônis Ferreira",
+   "role": "Sócio",
+   "oab": "OAB PI 23588",
+   "bio": "Atuação orientada à análise técnica dos processos, com foco em previdenciário e consumidor.",
+   "image": "/brand/team/adonis.jpg"
+  },
+  {
+   "name": "Marcos Vinicius",
+   "role": "Sócio",
+   "oab": "OAB PI 23610",
+   "bio": "Atendimento consultivo e estratégico, unindo escuta e método para cada demanda recebida.",
+   "image": "/brand/team/marcos.jpg"
+  }
+ ]
+}
