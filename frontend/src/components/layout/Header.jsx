@@ -30,7 +30,7 @@ export default function Header({ variant = "light" }) {
 
     const onDark = variant === "dark";
     const barBg = scrolled
-        ? "bg-[rgba(128,64,64,0.94)] backdrop-blur-xl border-b border-white/10"
+        ? "bg-[rgba(78,22,21,0.96)] backdrop-blur-xl border-b border-white/10"
         : "bg-transparent";
     const linkColor = "text-white/90";
 

@@ -41,8 +41,8 @@ export default function LandingTemplate({ data }) {
                         </span>
                     </motion.div>
 
-                    <div className="mt-16 md:mt-24 max-w-[720px]">
-                        <h1 className="display-lg text-white" style={{ fontSize: "clamp(2rem, 4.4vw, 3.5rem)" }}>
+                    <div className="mt-16 md:mt-24 max-w-[900px]">
+                        <h1 className="display-hero text-white">
                             <LineReveal lines={data.h1.split(":").map((s, i, arr) => (i < arr.length - 1 ? `${s}:` : s))} stagger={0.14} delay={0.25} />
                         </h1>
                     </div>
@@ -56,7 +56,7 @@ export default function LandingTemplate({ data }) {
                         <div className="md:col-span-7">
                             <p className="body-lg body-onDark max-w-[52ch]">{data.subtitle}</p>
                             <div className="mt-8 hidden md:flex flex-wrap items-center gap-4">
-                                <button onClick={onCta} className="btn-primary" data-testid="landing-cta-hero">
+                                <button onClick={onCta} className="btn-gold" data-testid="landing-cta-hero">
                                     Fale com um advogado <span className="btn-arrow">→</span>
                                 </button>
                                 <a
@@ -190,7 +190,7 @@ export default function LandingTemplate({ data }) {
 
             {/* ================= Marquee ================= */}
             <section className="bg-[color:var(--paper)] hairline-b">
-                <Marquee words={["Método", "Cuidado", "Junqueira Advogados", "Piauí + Maranhão"]} slow />
+                <Marquee words={["Método", "Cuidado", "Junqueira Advogados", "Excelência"]} slow />
             </section>
 
             {/* ================= FINAL CTA ================= */}
@@ -202,7 +202,7 @@ export default function LandingTemplate({ data }) {
                         Uma análise técnica <span className="font-editorial italic text-[color:var(--gold)]">humana</span> começa com uma conversa.
                     </h2>
                     <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-4">
-                        <button onClick={onCta} className="btn-primary" data-testid="landing-cta-final">
+                        <button onClick={onCta} className="btn-gold" data-testid="landing-cta-final">
                             Fale com um advogado <span className="btn-arrow">→</span>
                         </button>
                         <a

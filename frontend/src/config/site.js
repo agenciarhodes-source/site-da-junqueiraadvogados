@@ -41,21 +41,21 @@ export const team = [
         role: "Sócio-fundador",
         oab: "OAB PI 15510 · OAB MA 28024-A",
         bio: "Trajetória construída no interior e ampliada para as principais praças do Piauí e Maranhão, com foco em cuidado jurídico responsável.",
-        image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80",
+        image: "/brand/team/filipe.jpg",
     },
     {
         name: "Adônis Ferreira",
         role: "Sócio",
         oab: "OAB PI 23588",
         bio: "Atuação orientada à análise técnica dos processos, com foco em previdenciário e consumidor.",
-        image: "https://images.unsplash.com/photo-1573497491765-dccce02b29df?auto=format&fit=crop&w=900&q=80",
+        image: "/brand/team/adonis.jpg",
     },
     {
         name: "Marcos Vinicius",
         role: "Sócio",
         oab: "OAB PI 23610",
         bio: "Atendimento consultivo e estratégico, unindo escuta e método para cada demanda recebida.",
-        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80",
+        image: "/brand/team/marcos.jpg",
     },
 ];
 
@@ -77,11 +77,11 @@ export const units = [
     {
         city: "Parnaíba",
         state: "Piauí",
-        address: "Rua Itabajara, 535 — Bairro São Francisco",
+        address: "Rua Tabajara, 535 — Bairro São Francisco",
         whatsapp: "(86) 9 9920-1896",
         whatsappLink: "https://wa.me/558699920896",
         mapEmbed:
-            "https://www.google.com/maps?q=Rua+Itabajara+535+Parnaiba+PI&output=embed",
+            "https://www.google.com/maps?q=Rua+Tabajara+535+Parnaiba+PI&output=embed",
     },
     {
         city: "Luzilândia",

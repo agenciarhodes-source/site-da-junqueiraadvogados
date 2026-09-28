@@ -42,13 +42,13 @@ export default function LandingLayout({ slug, topic, children }) {
                         >
                             {siteConfig.generalPhone}
                         </a>
-                        <button onClick={onCta} className="btn-primary" data-testid="landing-cta-header">
+                        <button onClick={onCta} className="btn-gold" data-testid="landing-cta-header">
                             Fale com um advogado <span className="btn-arrow">→</span>
                         </button>
                     </div>
                     <button
                         onClick={onCta}
-                        className="md:hidden btn-primary !py-2.5 !px-4 !text-[11px]"
+                        className="md:hidden btn-gold !py-2.5 !px-4 !text-[11px]"
                         data-testid="landing-cta-header-mobile"
                     >
                         Fale com um advogado
@@ -67,7 +67,7 @@ export default function LandingLayout({ slug, topic, children }) {
             >
                 <button
                     onClick={onCta}
-                    className="btn-primary w-full !py-4 shadow-2xl"
+                    className="btn-gold w-full !py-4 shadow-2xl"
                     data-testid="landing-cta-sticky"
                 >
                     Fale com um advogado <span className="btn-arrow">→</span>

@@ -19,7 +19,6 @@ export default function Escritorio() {
                     <div className="absolute inset-0 grain opacity-40" />
                 </div>
                 <div className="container-e relative">
-                    <div className="section-label section-label-onDark mb-6">— O Escritório</div>
                     <h1 className="display-hero text-white">
                         <LineReveal
                             lines={[
@@ -95,7 +94,7 @@ export default function Escritorio() {
 
             {/* Marquee */}
             <section className="bg-[color:var(--paper)] hairline-b">
-                <Marquee words={["Método", "Presença", "Transparência", "Cuidado", "Piauí + Maranhão"]} />
+                <Marquee words={["Método", "Presença", "Transparência", "Cuidado", "Excelência"]} />
             </section>
 
             {/* Equipe resumida */}

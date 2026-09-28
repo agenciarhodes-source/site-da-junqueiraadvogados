@@ -7,41 +7,41 @@
     /* Brand palette */
     --ink: #1d1d1d;
     --ink-2: #2a2323;
-    --paper: #f1f1f1;
-    --paper-2: #ece8e4;
-    --white: #ffffff;
-    --burgundy: #804040;
-    --burgundy-deep: #5c2a2a;
-    --burgundy-soft: #a05f5f;
+    --paper: #F0E1D2;
+    --paper-2: #e8d6c5;
+    --white: #F0E1D2;
+    --burgundy: #4E1615;
+    --burgundy-deep: #3a0f0f;
+    --burgundy-soft: #6b2e2d;
     --gold: #c9a36a;
     --gold-2: #8f7040;
     --hairline: rgba(29, 29, 29, 0.14);
-    --hairline-dark: rgba(255, 255, 255, 0.14);
+    --hairline-dark: rgba(240, 225, 210, 0.14);
 
     /* Type */
     --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, sans-serif;
     --font-editorial: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", serif;
 
     /* shadcn baseline (used by ui components) - tuned to brand */
-    --background: 0 0% 94.5%;
+    --background: 28 40% 88%;
     --foreground: 0 0% 11%;
-    --card: 0 0% 100%;
+    --card: 28 40% 92%;
     --card-foreground: 0 0% 11%;
-    --popover: 0 0% 100%;
+    --popover: 28 40% 92%;
     --popover-foreground: 0 0% 11%;
-    --primary: 0 33% 38%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 96%;
+    --primary: 1 57% 19%;
+    --primary-foreground: 28 40% 88%;
+    --secondary: 28 30% 85%;
     --secondary-foreground: 0 0% 11%;
-    --muted: 0 0% 92%;
+    --muted: 28 25% 82%;
     --muted-foreground: 0 0% 40%;
     --accent: 36 43% 60%;
     --accent-foreground: 0 0% 11%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --ring: 0 33% 38%;
+    --destructive-foreground: 28 40% 92%;
+    --border: 28 20% 78%;
+    --input: 28 20% 78%;
+    --ring: 1 57% 19%;
     --radius: 0.75rem;
 }
 
@@ -52,8 +52,8 @@
     --card-foreground: 0 0% 96%;
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 96%;
-    --primary: 0 33% 42%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 1 57% 22%;
+    --primary-foreground: 28 40% 92%;
     --secondary: 0 0% 14%;
     --secondary-foreground: 0 0% 96%;
     --muted: 0 0% 14%;
@@ -145,8 +145,8 @@ html.lenis body {
     font-family: var(--font-sans);
     font-weight: 500;
     letter-spacing: -0.03em;
-    line-height: 0.94;
-    font-size: clamp(2.6rem, 9vw, 8rem);
+    line-height: 0.98;
+    font-size: clamp(2.2rem, 6.2vw, 5.25rem);
 }
 .display-xl {
     font-family: var(--font-sans);
@@ -242,15 +242,15 @@ html.lenis body {
         transform 0.5s cubic-bezier(0.2, 0.9, 0.2, 1),
         background-color 0.35s ease,
         box-shadow 0.4s ease;
-    box-shadow: 0 8px 30px -12px rgba(128, 64, 64, 0.55);
+    box-shadow: 0 8px 30px -12px rgba(78, 22, 21, 0.55);
     border: 1px solid rgba(255, 255, 255, 0.06);
     cursor: pointer;
     white-space: nowrap;
 }
 .btn-primary:hover {
-    background: #6d3535;
+    background: #3a0f0f;
     transform: translateY(-2px);
-    box-shadow: 0 12px 34px -12px rgba(128, 64, 64, 0.7);
+    box-shadow: 0 12px 34px -12px rgba(78, 22, 21, 0.7);
 }
 .btn-primary .btn-arrow {
     display: inline-block;
@@ -396,15 +396,15 @@ html.lenis body {
 
 /* Card */
 .editorial-card {
-    background: var(--white);
-    border: 1px solid var(--hairline);
+    background: #f7efe5;
+    border: 1px solid rgba(78, 22, 21, 0.1);
     border-radius: 14px;
     transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 0.5s ease, border-color 0.35s ease;
 }
 .editorial-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 30px 50px -30px rgba(29, 29, 29, 0.18);
-    border-color: rgba(128, 64, 64, 0.32);
+    border-color: rgba(78, 22, 21, 0.32);
 }
 
 /* Chapter number */

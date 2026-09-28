@@ -4,55 +4,34 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import InstitutionalLayout from "@/components/layout/InstitutionalLayout";
 import { LineReveal, Reveal, FadeUp, ImageReveal } from "@/components/motion/Reveal";
 import Marquee from "@/components/Marquee";
-import GalleryCarousel from "@/components/GalleryCarousel";
+import HeroSlideshow from "@/components/HeroSlideshow";
+import TeamCarousel from "@/components/TeamCarousel";
 import { siteConfig, areas, units, testimonials } from "@/config/site";
 import { ArrowUpRight, MapPin, Phone } from "lucide-react";
 
-const HERO_IMG =
-    "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80";
-
-const GALLERY = [
-    "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1573497491765-dccce02b29df?auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+const HERO_SLIDES = [
+    "/brand/hero/hero-1.jpg",
+    "/brand/hero/hero-2.jpg",
+    "/brand/hero/hero-3.jpg",
+    "/brand/hero/hero-4.jpg",
 ];
 
 export default function Home() {
     const { scrollY } = useScroll();
-    const heroImgY = useTransform(scrollY, [0, 800], [0, 120]);
-    const heroImgScale = useTransform(scrollY, [0, 800], [1, 1.08]);
     const heroTextY = useTransform(scrollY, [0, 600], [0, -60]);
 
     return (
         <InstitutionalLayout>
             {/* ========================== HERO ========================== */}
             <section className="relative min-h-[100svh] w-full overflow-hidden bg-[color:var(--burgundy)] text-white">
-                {/* Parallax background image */}
-                <motion.div
-                    style={{ y: heroImgY, scale: heroImgScale }}
-                    className="absolute inset-0"
-                >
-                    <div className="absolute inset-0">
-                        <img
-                            src={HERO_IMG}
-                            alt="Advogados Junqueira"
-                            className="h-full w-full object-cover opacity-[0.08]"
-                        />
-                        <div className="absolute inset-0 bg-[color:var(--burgundy)]" style={{ opacity: 0.94 }} />
-                        <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--burgundy)]/60 via-transparent to-[color:var(--burgundy-deep)]/80" />
-                        <div className="absolute inset-0 grain opacity-70" />
-                    </div>
-                </motion.div>
+                {/* Slideshow background */}
+                <HeroSlideshow images={HERO_SLIDES} interval={5000} />
+                {/* Burgundy overlay */}
+                <div className="absolute inset-0 bg-[color:var(--burgundy)]" style={{ opacity: 0.3 }} />
+                <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--burgundy)]/60 via-transparent to-[color:var(--burgundy-deep)]/80" />
+                <div className="absolute inset-0 grain opacity-70" />
 
-                {/* Vertical rule */}
-                <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/10 hidden md:block" />
-
-                <motion.div style={{ y: heroTextY }} className="relative container-e min-h-[100svh] flex flex-col justify-between pt-[120px] pb-16">
+                <motion.div style={{ y: heroTextY }} className="relative container-e min-h-[100svh] flex flex-col justify-center gap-5 md:gap-7 pt-[150px] pb-16">
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -66,7 +45,7 @@ export default function Home() {
                     </motion.div>
 
                     {/* Kinetic H1 */}
-                    <div className="mt-14 md:mt-24 max-w-[1200px]">
+                    <div className="mt-0 max-w-[1200px]">
                         <h1 className="display-hero text-white font-light">
                             <LineReveal
                                 lines={siteConfig.hero.title.map((t, i) =>
@@ -85,7 +64,7 @@ export default function Home() {
                     </div>
 
                     {/* Bottom row */}
-                    <div className="mt-16 md:mt-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+                    <div className="mt-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -154,7 +133,6 @@ export default function Home() {
             <section className="bg-[color:var(--paper)] py-24 md:py-32">
                 <div className="container-e grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
                     <div className="md:col-span-6">
-                        <div className="section-label">— Nossa história</div>
                         <Reveal>
                             <h2 className="display-lg mt-5" style={{ maxWidth: "20ch" }}>
                                 Compromisso com resultados e uma trajetória de <span className="font-editorial italic text-[color:var(--burgundy)]">confiança</span>.
@@ -193,26 +171,14 @@ export default function Home() {
                 />
             </section>
 
-            {/* ========================== GALLERY CARROSSEL ========================== */}
-            <section className="bg-[color:var(--paper)] py-20 md:py-24 overflow-hidden">
-                <div className="container-e mb-10 md:mb-14">
-                    <div className="section-label mb-4">— Escritório em imagens</div>
-                    <h2 className="display-lg" style={{ maxWidth: "22ch" }}>
-                        Um <span className="font-editorial italic text-[color:var(--burgundy)]">olhar</span> pelo cotidiano do escritório.
-                    </h2>
-                </div>
-                <GalleryCarousel images={GALLERY} duration={45} />
-            </section>
-
-            {/* --- keep only single marquee above; second marquee replaced by gallery --- */}
-            {/* removed duplicate marquee marker */}
+            {/* ========================== TEAM CAROUSEL ========================== */}
+            <TeamCarousel />
 
             {/* ========================== ÁREAS ========================== */}
             <section className="bg-[color:var(--paper)] py-24 md:py-32" id="areas">
                 <div className="container-e">
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end mb-14">
                         <div className="md:col-span-12">
-                            <div className="section-label mb-4">— Áreas de atuação</div>
                             <h2 className="display-xl">
                                 Áreas de <span className="font-editorial italic text-[color:var(--burgundy)]">atuação</span>.
                             </h2>
@@ -220,28 +186,27 @@ export default function Home() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {areas.map((a, i) => (
-                            <FadeUp key={a.slug} delay={i * 0.03}>
-                                <Link
-                                    to={`/${a.slug}`}
-                                    className="editorial-card group block p-7 md:p-8 h-full"
-                                    data-testid={`area-card-${a.slug}`}
-                                >
-                                    <div className="flex items-start justify-between gap-4">
-                                        <div>
-                                            <div className="text-[10px] tracking-[0.28em] uppercase text-[color:var(--burgundy)] font-medium">
-                                                {a.group}
-                                            </div>
-                                            <div className="display-md mt-3">{a.name}</div>
+                        {areas.map((a) => (
+                            <Link
+                                key={a.slug}
+                                to={`/${a.slug}`}
+                                className="editorial-card group block p-7 md:p-8 h-full"
+                                data-testid={`area-card-${a.slug}`}
+                            >
+                                <div className="flex items-start justify-between gap-4">
+                                    <div>
+                                        <div className="text-[10px] tracking-[0.28em] uppercase font-medium" style={{ color: "#4E1615" }}>
+                                            {a.group}
                                         </div>
-                                        <ArrowUpRight
-                                            size={20}
-                                            className="text-[color:var(--burgundy)] transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1"
-                                        />
+                                        <div className="display-md mt-3" style={{ color: "#1d1d1d" }}>{a.name}</div>
                                     </div>
-                                    <p className="body-sm mt-6">{a.short}</p>
-                                </Link>
-                            </FadeUp>
+                                    <ArrowUpRight
+                                        size={20}
+                                        className="text-[color:var(--burgundy)] transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1"
+                                    />
+                                </div>
+                                <p className="body-sm mt-6" style={{ color: "#1d1d1d" }}>{a.short}</p>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -252,7 +217,6 @@ export default function Home() {
                 <div className="container-e">
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-14 items-end">
                         <div className="md:col-span-7">
-                            <div className="section-label mb-4">— Unidades</div>
                             <h2 className="display-xl">
                                 Sete <span className="font-editorial italic text-[color:var(--burgundy)]">unidades</span>.
                             </h2>
@@ -264,32 +228,30 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {units.map((u, i) => (
-                            <FadeUp key={u.city} delay={i * 0.04}>
-                                <div className="editorial-card p-6 md:p-7 h-full">
-                                    <div className="text-[10px] tracking-[0.28em] uppercase text-[color:var(--burgundy)] font-medium">
-                                        {u.state}
-                                    </div>
-                                    <div className="display-md mt-3 flex items-baseline gap-3">
-                                        {u.city}
-                                        {u.head && (
-                                            <span className="text-[10px] tracking-[0.24em] uppercase text-[color:var(--gold-2)] px-2 py-1 border border-[color:var(--gold)]/40 rounded-full">
-                                                matriz
-                                            </span>
-                                        )}
-                                    </div>
-                                    <div className="mt-4 flex items-start gap-2 body-sm">
-                                        <MapPin size={14} className="mt-1 text-[color:var(--burgundy)]" />
-                                        <span>{u.address}</span>
-                                    </div>
-                                    {(u.whatsapp || u.phone) && (
-                                        <div className="mt-2 flex items-center gap-2 body-sm">
-                                            <Phone size={14} className="text-[color:var(--burgundy)]" />
-                                            <span>{u.whatsapp || u.phone}</span>
-                                        </div>
+                        {units.map((u) => (
+                            <div key={u.city} className="editorial-card p-6 md:p-7 h-full">
+                                <div className="text-[10px] tracking-[0.28em] uppercase font-medium" style={{ color: "#4E1615" }}>
+                                    {u.state}
+                                </div>
+                                <div className="display-md mt-3 flex items-baseline gap-3" style={{ color: "#1d1d1d" }}>
+                                    {u.city}
+                                    {u.head && (
+                                        <span className="text-[10px] tracking-[0.24em] uppercase text-[color:var(--gold-2)] px-2 py-1 border border-[color:var(--gold)]/40 rounded-full">
+                                            matriz
+                                        </span>
                                     )}
                                 </div>
-                            </FadeUp>
+                                <div className="mt-4 flex items-start gap-2 body-sm" style={{ color: "#1d1d1d" }}>
+                                    <MapPin size={14} className="mt-1 text-[color:var(--burgundy)]" />
+                                    <span>{u.address}</span>
+                                </div>
+                                {(u.whatsapp || u.phone) && (
+                                    <div className="mt-2 flex items-center gap-2 body-sm" style={{ color: "#1d1d1d" }}>
+                                        <Phone size={14} className="text-[color:var(--burgundy)]" />
+                                        <span>{u.whatsapp || u.phone}</span>
+                                    </div>
+                                )}
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -298,21 +260,18 @@ export default function Home() {
             {/* ========================== DEPOIMENTOS ========================== */}
             <section className="bg-[color:var(--paper-2)] py-24 md:py-32">
                 <div className="container-e">
-                    <div className="section-label mb-4">— Depoimentos</div>
                     <h2 className="display-xl mb-14" style={{ maxWidth: "22ch" }}>
-                        O que <span className="font-editorial italic text-[color:var(--burgundy)]">dizem</span> sobre o escritório.
+                        O que <span className="font-editorial italic text-[color:var(--burgundy)]">dizem</span> sobre a Junqueira Advogados.
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {testimonials.map((t, i) => (
-                            <FadeUp key={t.name} delay={i * 0.05}>
-                                <div className="editorial-card p-6 h-full flex flex-col">
-                                    <div className="text-[color:var(--gold)] text-lg tracking-widest">★★★★★</div>
-                                    <p className="body-sm mt-4 flex-1">"{t.text}"</p>
-                                    <div className="mt-6 text-[11px] tracking-[0.24em] uppercase text-[color:var(--burgundy)] font-medium">
-                                        {t.name}
-                                    </div>
+                        {testimonials.map((t) => (
+                            <div key={t.name} className="editorial-card p-6 h-full flex flex-col">
+                                <div className="text-[color:var(--gold)] text-lg tracking-widest">★★★★★</div>
+                                <p className="body-sm mt-4 flex-1" style={{ color: "#1d1d1d" }}>"{t.text}"</p>
+                                <div className="mt-6 text-[11px] tracking-[0.24em] uppercase font-medium" style={{ color: "#4E1615" }}>
+                                    {t.name}
                                 </div>
-                            </FadeUp>
+                            </div>
                         ))}
                     </div>
                 </div>
