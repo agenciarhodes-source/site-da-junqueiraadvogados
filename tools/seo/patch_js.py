@@ -12,14 +12,14 @@ js=js.replace(oldalt,oldalt.replace('alt:""','alt:"Equipe trabalhando no escrit\
 for a,b in TEXT_SWAPS:
     n=js.count(a); assert n>=1,(a,n); js=js.replace(a,b)
     print(n,'x',b[:60])
-NEW='main.9a3d61c2'
+NEW='main.b7e40f15'
 js=js.replace('main.7b2e4d91',NEW)
 d='/home/claude/site-original/static/js/'
 for f in glob.glob(d+'main.*'): os.remove(f)
 open(d+NEW+'.js','w').write(js)
 import shutil; shutil.copy('/home/claude/site-backup-pre-seo/static/js/main.7b2e4d91.js.LICENSE.txt',d+NEW+'.js.LICENSE.txt')
 for f in ['/home/claude/site-original/asset-manifest.json','template.html']:
-    s=open(f).read().replace('main.5f2b7c19',NEW); open(f,'w').write(s)
+    s=open(f).read().replace('main.9a3d61c2',NEW); open(f,'w').write(s)
 t=open('template.html').read()
 t=t.replace('presença consolidada no Piauí e Maranhão. Método, transparência e proximidade jurídica.','atuação em Direito Previdenciário e do Consumidor e atendimento em todo o Brasil.')
 t=t.replace('presença no Piauí e Maranhão. Atendimento presencial e digital com método.','atendimento presencial e digital em todo o Brasil.')
